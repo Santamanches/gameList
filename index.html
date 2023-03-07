@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 2</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Выберите категорию</h1>
+        <div class="form">
+            <input type="text" v-model="name">
+            <select v-model="category">
+                <option>csgo</option>
+                <option>dota</option>
+                <option>pubg</option>
+            </select>
+            <button class="btn" @click="add">Добавить игрока</button>
+        </div>
+        <div class="categories">
+            <div class="csgo">
+                <h2>CS:GO</h2>
+                <div class="category__item" v-for="player in games.csgo" :key="player">
+                    <p>{{ player }}</p>
+                </div>
+            </div>
+            <div class="dota">
+            <h2>dota</h2>
+            <div class="category__item" v-for="player in games.dota" :key="player">
+                <p>{{ player }}</p>
+            </div>
+        </div>
+        <div class="pubg">
+        <h2>pubg</h2>
+        <div class="category__item" v-for="player in games.pubg" :key="player">
+            <p>{{ player }}</p>
+
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
